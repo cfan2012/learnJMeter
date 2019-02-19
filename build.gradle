@@ -17,7 +17,49 @@ dependencies {
 }
 
 jmeter {
-    jmTestFiles = [file("src/test/jmeter/test2.jmx")] //if jmx file is not in the default location
-    enableExtendedReports = true //produce Graphical and CSV reports
+    jmTestFiles = [file("src/test/jmeter/test2.jmx")]
+    csvLogFile = false
+    afterEvaluate {
+        def jMeterExt = project.extensions.findByName("jmeter")
+        jMeterExt.metaClass.enableReports = true
+        jMeterExt.metaClass.enableExtendedReports = false
+        jMeterExt.metaClass.reportTitle = null
+        jMeterExt.metaClass.reportPostfix = ""
+        jMeterExt.metaClass.reportXslt = "$project.projectDir/build/jmeter-results-detail-report_21.xsl"
 
+    }
+
+}
+
+task readXml{
+    def dir = fileTree("$projectDir/gateway/build/jmeter-report/"){
+        include '*.xml'
+    }
+    def numberOfXml = dir.getFiles().size()
+    def findFiles = dir.getFiles()
+//    println dir.toString()
+//    println numberOfXml
+    for(int i=0; i<numberOfXml; i++){
+        String fileName = findFiles.getAt(i).toString()
+//        println fileName
+        def outputList = read(fileName)
+        for(String message: outputList)
+            println message
+    }
+}
+
+def read(String FileName){
+    def xmlSluper = new XmlSlurper()
+    def result = xmlSluper.parse(file(FileName))
+    def errorMessageList = result.httpSample*.assertionResult*.failureMessage;
+    def outputList = new ArrayList()
+    for(int i=0; i<errorMessageList.size(); i++){
+        String errorTitle = result.httpSample*.@lb[i]
+        String errorMessage = errorMessageList.get(i)
+        if(errorMessage!=""){
+            String string = "Occored a error, test case name is \""+errorTitle+"\". " + "Reason is: " + errorMessage
+            outputList.add(string)
+        }
+    }
+    return outputList
 }
