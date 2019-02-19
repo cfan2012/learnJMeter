@@ -3,11 +3,11 @@
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
       <map>
-        <entry key="$USER_HOME$/Desktop/twu62team9-master-02433e7fea9a2eadbb732f68a13cfe848de9cca2" value="PREVIEW" />
-        <entry key="$USER_HOME$/Downloads/demo" value="PREVIEW" />
-        <entry key="$USER_HOME$/api-gw-authz" value="PREVIEW" />
-        <entry key="$USER_HOME$/api-gw-server" value="PREVIEW" />
-        <entry key="$USER_HOME$/jmeter-gradle-plugin" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../Desktop/twu62team9-master-02433e7fea9a2eadbb732f68a13cfe848de9cca2" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../Downloads/demo" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../api-gw-authz" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../api-gw-server" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../jmeter-gradle-plugin" value="PREVIEW" />
         <entry key="/Volumes/KINGSTON/copy/classExercise" value="PREVIEW" />
       </map>
     </option>
@@ -21,6 +21,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550560553561" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>

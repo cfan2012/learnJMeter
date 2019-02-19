@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1550560582109,514,测试百度,200,OK,Bo Xiang Test 1-1,text,true,,2843,117,1,1,514,0,454
+1550560582115,2,测试百度2,Non HTTP response code: java.net.UnknownHostException,"Non HTTP response message: www.baidu.com4444: nodename nor servname provided, or not known",Bo Xiang Test 1-1,text,false,,2185,0,1,1,0,0,2
+1550560582758,641,测试找不到页面,404,Not Found,Bo Xiang Test 1-1,text,true,,31683,125,1,1,633,0,170
+1550560583178,419,测试找不到页面2,404,Not Found,Bo Xiang Test 1-1,text,true,,31702,125,1,1,417,0,0
